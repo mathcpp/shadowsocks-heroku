@@ -13,6 +13,7 @@ Heroku
 ### Usage
 
 ```
+$ heroku login
 $ heroku create
 Creating still-tor-8707... done, stack is cedar-14
 http://still-tor-8707.herokuapp.com/ | git@heroku.com:still-tor-8707.git
@@ -21,6 +22,7 @@ http://still-tor-8707.herokuapp.com/ | git@heroku.com:still-tor-8707.git
 Push the code to Heroku.
 
 ```
+$ heroku git:remote -a still-tor-8707
 $ git push heroku master
 …
 -----> Compressing... done, 5.1MB
