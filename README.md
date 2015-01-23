@@ -58,7 +58,7 @@ ws@0.6.4 node_modules/ws
 Then run:
 
 ```
-$ node local.js -s still-tor-8707.herokuapp.com -l 1080 -m rc4 -k foobar -r 80
+$ node local.js -s still-tor-8707.herokuapp.com -l 1080 -m rc4 -k foobar -r 80 -b 0.0.0.0
 server listening at { address: '0.0.0.0', family: 'IPv4', port: 1080 }
 ```
 
