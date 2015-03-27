@@ -23,6 +23,8 @@ Push the code to Heroku.
 
 ```
 $ heroku git:remote -a still-tor-8707
+Git remote heroku added
+
 $ git push heroku master
 …
 -----> Compressing... done, 5.1MB
