@@ -65,7 +65,7 @@
 
   timeout = Math.floor(config.timeout * 1000);
 
-  if ((METHOD != null) && ((_ref = METHOD.toLowerCase()) === "" || _ref === "null")) {
+  if ((_ref = METHOD.toLowerCase()) === "" || _ref === "null" || _ref === "table") {
     METHOD = null;
   }
 
@@ -191,6 +191,13 @@
           });
           ws.on("open", function() {
             var addrToSendBuf, i, piece;
+            ws._socket.on("error", function(e) {
+              console.log("remote " + remoteAddr + ":" + remotePort + " " + e);
+              connection.destroy();
+              return server.getConnections(function(err, count) {
+                console.log("concurrent connections:", count);
+              });
+            });
             console.log("connecting " + remoteAddr + " via " + aServer);
             addrToSendBuf = new Buffer(addrToSend, "binary");
             addrToSendBuf = encryptor.encrypt(addrToSendBuf);
